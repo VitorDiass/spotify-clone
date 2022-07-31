@@ -4,10 +4,17 @@
 
 @font-face {
     font-family: "Gotham";
-    src: url("./fonts/GothamBold.ttf") format("truetype");
+    src: url("./fonts/Gotham-Black.otf") format("truetype");
 }
+
+@font-face {
+    font-family: "Gotham Light";
+    src: url("./fonts/Gotham-Light.otf") format("truetype");
+}
+
 
 #root{
     font-family: 'Gotham';
     font-size: 14px;
+    color : white;
 }

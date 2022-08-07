@@ -9,7 +9,7 @@ const ActionsMenu = () => {
   const route = useLocation();
 
   return (
-    <ul className="flex flex-col gap-y-4 text-spotify-link-subtle">
+    <ul className="flex flex-col gap-y-4 px-6 text-spotify-link-subtle">
       <li>
         <Link to="/home" className="hover:text-white">
           <div className="flex items-center gap-x-4">

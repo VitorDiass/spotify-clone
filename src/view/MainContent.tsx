@@ -1,16 +1,13 @@
 import React from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 
 
 const MainContent = ({children} : React.PropsWithChildren) => {
 
   return (
-    <div className='flex min-h-[485px] h-[827px] overflow-y-auto'>
-        <Routes>
-            <Route path="/search" element={<></>} />
-            <Route path="/home" element={<></>} />
-        </Routes>
+    <div className="flex w-full min-h-full">
+       {/* min-h-[485px] */}
       {children}
     </div>
   )

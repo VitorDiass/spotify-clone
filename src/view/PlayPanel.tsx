@@ -20,7 +20,7 @@ const PlayPanel = () => {
   };
 
   return (
-    <div className="w-full min-h-[90px] bg-spotify-playpanel-bg border-t border-spotify-divider-color flex justify-between p-4 font-gothamlight">
+    <div className="w-full min-h-[90px] max-h-[120px] bottom-0 absolute bg-spotify-playpanel-bg border-t border-spotify-divider-color flex justify-between p-4 font-gothamlight">
       <div className="flex w-1/3 justify-start items-center gap-x-3">
         <img src="./vite.svg" height={40} width={40}></img>
         <div className="flex flex-col">

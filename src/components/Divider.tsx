@@ -2,7 +2,7 @@ import React from 'react'
 
 const Divider = () => {
   return (
-    <div className='border-b border-spotify-divider-color my-6'></div>
+    <div className='flex self-center w-10/12 border-b border-spotify-divider-color mt-6 mb-1'></div>
   )
 }
 

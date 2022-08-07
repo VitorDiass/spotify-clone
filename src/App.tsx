@@ -10,7 +10,7 @@ import PlayPanel from './view/PlayPanel'
 const App = () => {
 
   return (
-    <div className='w-100 max-h-screen'>
+    <div className='w-100 min-h-screen'>
       <BrowserRouter>
         <MainContent>
           <LeftPanel/>

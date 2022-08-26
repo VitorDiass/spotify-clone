@@ -4,7 +4,20 @@ import {
   IoChevronBackCircleOutline,
   IoChevronForwardCircleOutline,
 } from "react-icons/io5";
-import { FaChevronDown, FaUserCircle } from "react-icons/fa";
+import { FaChevronDown, FaExternalLinkAlt, FaUserCircle } from "react-icons/fa";
+
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+  Button,
+  IconButton,
+} from "@chakra-ui/react";
 
 interface props {
   children?: React.ReactNode;
@@ -31,7 +44,24 @@ const Header = ({ children }: props) => {
           {children}
         </div>
         <div className="flex items-center">
-          <button className="flex items-center gap-x-2 py-1 px-2 rounded-full bg-spotify-black"><FaUserCircle size={25}/> Vitor Dias <FaChevronDown /></button>
+          <Menu >
+            <MenuButton className="!border-none !bg-spotify-black !rounded-full" as={Button} variant='outline' rightIcon={<FaChevronDown />}>
+              <div className="flex items-center gap-x-3 text-sm">
+              <FaUserCircle size={18}/> USERNAME
+              </div>
+            </MenuButton>
+            <MenuList className="!bg-spotify-divider-color font-gothamlight border-none">
+              <MenuItem className="focus:!bg-spotify-scrollbar-hover flex justify-between">Account <FaExternalLinkAlt/></MenuItem>
+              <MenuItem className="focus:!bg-spotify-scrollbar-hover">Profile</MenuItem>
+              <MenuItem className="focus:!bg-spotify-scrollbar-hover flex justify-between">Uprade to premium <FaExternalLinkAlt/></MenuItem>
+              <MenuItem className="focus:!bg-spotify-scrollbar-hover">Settings</MenuItem>
+              <MenuDivider/>
+              <MenuItem className="focus:!bg-spotify-scrollbar-hover ">Log out</MenuItem>
+            </MenuList>
+          </Menu>
+          {/*  <button className="flex items-center gap-x-2 py-1 px-2 rounded-full bg-spotify-black">
+            <FaUserCircle size={25} /> USER <FaChevronDown />
+          </button> */}
         </div>
       </div>
     </header>

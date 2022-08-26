@@ -15,6 +15,9 @@ module.exports = {
       },
       fontFamily: {
         gothamlight : ['Gotham Light', 'sans-serif'],
+      },
+      rotate : {
+        '25' : '25deg'
       }
     },
     

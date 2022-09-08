@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: "Gotham";
-    src: url("./fonts/Gotham-Black.otf") format("truetype");
+    src: url("/fonts/Gotham-Black.otf") format("truetype");
 }
 
 @font-face {
     font-family: "Gotham Light";
-    src: url("./fonts/Gotham-Light.otf") format("truetype");
+    src: url("/fonts/Gotham-Light.otf") format("truetype");
 }
 
 
@@ -47,6 +47,12 @@
 
 @layer components {
     .play-button-card {
-        @apply flex justify-center items-center rounded-full absolute z-50 top-[115px] left-[115px] bg-spotify-green text-black hover:drop-shadow-2xl;
+        @apply flex justify-center items-center rounded-full absolute z-50 top-[100px] left-[100px] bg-spotify-green text-black hover:drop-shadow-2xl;
     }
+}
+
+.bg-beatles {
+  background: url("/artists/beatles/beatles_artist_page.png");
+  background-size: cover;
+ 
 }

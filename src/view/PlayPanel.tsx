@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
+  AiFillPauseCircle,
   AiFillPlayCircle,
   AiFillStepBackward,
   AiFillStepForward,
@@ -14,6 +15,7 @@ import { Link } from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";
 
 const PlayPanel = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = React.useState(100);
   const handleVolumeChange = (e: any) => {
     setVolume(e);
@@ -22,7 +24,7 @@ const PlayPanel = () => {
   return (
     <div className="w-full min-h-[90px] max-h-[120px] bottom-0 absolute bg-spotify-playpanel-bg border-t border-spotify-divider-color flex justify-between p-4 font-gothamlight">
       <div className="flex w-1/3 justify-start items-center gap-x-3">
-        <img src="./current_playing.jpg" height={56} width={56}></img>
+        <img src="/current_playing.jpg" height={56} width={56}></img>
         <div className="flex flex-col">
           <a href="/" className="hover:underline">
             Signs
@@ -39,12 +41,12 @@ const PlayPanel = () => {
         <div className="flex items-center gap-x-4">
           <BsShuffle size={25} className="hover:text-white" />
           <AiFillStepBackward size={25} className="hover:text-white" />
-          <AiFillPlayCircle size={40} className="text-white" />
+          {isPlaying ?  <AiFillPauseCircle size={40} className="text-white" onClick={() => setIsPlaying(prev => !prev)}/> : <AiFillPlayCircle size={40} className="text-white" onClick={() => setIsPlaying(prev => !prev)}/>}
           <AiFillStepForward size={25} className="hover:text-white" />
           <BiRepeat size={25} className="hover:text-white" />
         </div>
         <div className="w-full flex items-center gap-x-3">
-          <span>0:13</span>
+          <span>0:00</span>
           <ProgressBar
             sliderThumbShow={true}
             defaultValue={0}

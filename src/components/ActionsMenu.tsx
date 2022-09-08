@@ -11,10 +11,10 @@ const ActionsMenu = () => {
   return (
     <ul className="flex flex-col gap-y-4 px-6 text-spotify-link-subtle">
       <li>
-        <Link to="/home" className="hover:text-white">
+        <Link to="/" className="hover:text-white">
           <div className="flex items-center gap-x-4">
             {route.pathname === "/home" ? <AiFillHome size={25} className="text-white" /> : <AiOutlineHome size={25} />}
-            <span className={clsx(route.pathname === '/home' && 'text-white')}>Home</span>
+            <span className={clsx(route.pathname === '/' && 'text-white')}>Home</span>
           </div>
         </Link>
       </li>

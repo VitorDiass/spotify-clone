@@ -6,7 +6,7 @@ export interface YourTopGenresInterface {
     cardImage : string
 }
 
-export const YourTopGenres = [
+export const YourTopGenres : Array<YourTopGenresInterface>= [
     {
         id : 1,
         name : "Rock",

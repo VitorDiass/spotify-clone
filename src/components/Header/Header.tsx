@@ -2,7 +2,9 @@ import React, { ReactNode, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import {
   IoChevronBackCircleOutline,
+  IoChevronBackCircleSharp,
   IoChevronForwardCircleOutline,
+  IoChevronForwardCircleSharp,
 } from "react-icons/io5";
 import { FaChevronDown, FaExternalLinkAlt, FaUserCircle } from "react-icons/fa";
 
@@ -18,36 +20,38 @@ import {
   Button,
   IconButton,
 } from "@chakra-ui/react";
+import clsx from "clsx";
 
 interface props {
   children?: React.ReactNode;
+  isTransparent? : boolean
 }
 
-const Header = ({ children }: props) => {
+const Header = ({ children, isTransparent = false }: props) => {
   const route = useLocation();
   const history = useNavigate();
 
   return (
     <header>
-      <div className="flex justify-between items-center sticky top-0 z-50 p-4 bg-neutral-900 border-b border-neutral-800 h-20">
+      <div className={clsx("flex justify-between items-center sticky top-0 z-50 p-4  h-20", isTransparent ? 'bg-transparent border-none' : 'bg-neutral-900 border-b border-neutral-800')}>
         <div className="flex items-center text-spotify-link-subtle gap-x-2">
-          <IoChevronBackCircleOutline
+          <IoChevronBackCircleSharp
             size={35}
-            className="cursor-pointer"
+            className="cursor-pointer text-spotify-divider-color"
             onClick={() => history(-1)}
           />
-          <IoChevronForwardCircleOutline
+          <IoChevronForwardCircleSharp
             size={35}
-            className="cursor-pointer"
+            className="cursor-pointer text-spotify-divider-color"
             onClick={() => history(1)}
           />
           {children}
         </div>
         <div className="flex items-center">
-          <Menu >
-            <MenuButton className="!border-none !bg-spotify-black !rounded-full" as={Button} variant='outline' rightIcon={<FaChevronDown />}>
+          <Menu>
+            <MenuButton className="!border-none !bg-spotify-black !rounded-full max-h-[30px]" as={Button} variant='outline' rightIcon={<FaChevronDown />}>
               <div className="flex items-center gap-x-3 text-sm">
-              <FaUserCircle size={18}/> USERNAME
+                <FaUserCircle size={18}/> USERNAME
               </div>
             </MenuButton>
             <MenuList className="!bg-spotify-divider-color font-gothamlight border-none">
